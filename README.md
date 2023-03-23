@@ -1,2 +1,2 @@
-# AutoHotkeyScripts
-My AutoHotkey Scripts for improved computer use.
+# MyEfficiencyTools
+My AutoHotkey Scripts, keyboard layouts, and other minor doodads for improved computer use.
