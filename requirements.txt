@@ -1,0 +1,7 @@
+# To use requirements.txt:
+# 1) use admin privileges
+# 2) pip install -r requirements.txt
+
+###### Requirements without Version Specifiers ######
+pyautogui
+pywin32
