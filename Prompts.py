@@ -1,4 +1,4 @@
-possibleActions = "etc"
+possibleActions = "etcpo"
 possibleYesNoSelection = "yn"
 dividerSize = 80
 
@@ -27,6 +27,8 @@ def runPromptNoResponseLimit(PromptPrint, *promptArgs):
 
 def promptActionList():
     printDiv('-')
+    print("p to open text palette")
+    print("o to edit text palette paste dict")
     print("e to edit this script")
     print("t to open notes")
     print("c to exit")

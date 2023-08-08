@@ -5,6 +5,11 @@ def handleActionList():
     actionToTake = Prompts.runPrompt(Prompts.possibleActions, Prompts.promptActionList)
     
     match actionToTake:
+        case 'p': # open textpalette
+            os.chdir("C:\\MyStuff\\_TextPalette_")
+            os.system("C:\\MyStuff\\_TextPalette_\\launch.bat")
+        case 'o': # edit the textpalette paste dict
+            os.system("code-insiders C:\\MyStuff\\_TextPalette_\\paste_dict.txt")
         case 'e': # edit this script
             os.system("code-insiders C:\\MyStuff\\MyEfficiencyTools")
         case 't': # open notes
