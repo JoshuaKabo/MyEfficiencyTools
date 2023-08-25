@@ -14,14 +14,19 @@
 
 using namespace std;
 
-class Solution
+int main()
 {
-public:
-    int problem(int input)
+    class Solution
     {
-        return 0;
-    }
-};
+    public:
+        int problem(int input)
+        {
+            return 0;
+        }
+    };
+    // Solution s;
+    // cout << s.problem(5);
+}
 
 /*
 
