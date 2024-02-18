@@ -1,0 +1,40 @@
+{
+  // Best launch and tasks:
+  // https://www.youtube.com/watch?v=PhrwjHdsALM
+  // https://github.com/jemballs/godot4-vscode-csharp-build-config/tree/main
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Main Scene",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "buildNew",
+      "program": "${env:GODOT}",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "args": ["--path", "${workspaceFolder}"]
+    },
+    {
+      "name": "Launch (Select Scene)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "buildNew",
+      "program": "${env:GODOT}",
+      "console": "internalConsole",
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "args": [
+        "--path",
+        "${workspaceRoot}",
+        "${command:godot.csharp.getLaunchScene}"
+      ]
+    },
+    {
+      "name": "Attach - Scene Must Be Running",
+      "type": "coreclr",
+      "request": "attach"
+      // "processName": ""
+    }
+  ]
+}
