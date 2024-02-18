@@ -1,4 +1,4 @@
-possibleActions = "etcpo"
+possibleActions = "etcpogu"
 possibleYesNoSelection = "yn"
 dividerSize = 80
 
@@ -27,11 +27,13 @@ def runPromptNoResponseLimit(PromptPrint, *promptArgs):
 
 def promptActionList():
     printDiv('-')
-    print("p to open text palette")
-    print("o to edit text palette paste dict")
-    print("e to edit this script")
-    print("t to open notes")
     print("c to exit")
+    print("e to edit this script")
+    print("g to open Godot")
+    print("o to edit text palette paste dict")
+    print("p to open text palette")
+    print("t to open notes")
+    print("u to update Godot path")
     printDiv('-')
     return input("Select an action: ")
 
