@@ -8,7 +8,7 @@ def handleActionList():
         case 'c': # close
             sys.exit()
         case 'e': # edit this script
-            os.system("code-insiders C:\\MyStuff\\MyEfficiencyTools")
+            os.system("code-insiders C:\\Users\\joshk\\dev\\Tools\\MyEfficiencyTools")
         case 'g': # open Godot
             GodotManager.runGodot()
         case 'o': # edit the textpalette paste dict
