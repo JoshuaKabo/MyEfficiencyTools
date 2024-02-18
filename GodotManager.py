@@ -1,19 +1,8 @@
-import os, sys, Helpers
+import os
 
-def removeOldGodotPath():
-    orig_path = os.environ["PATH"]
-    updated_path = ""
-
-    for path in os.environ["PATH"].split(os.pathsep):
-        if "Godot" in path:
-            updated_path = os.environ["PATH"].replace(path + os.pathsep, "")
-
-    print(updated_path)
-
-def updateGodotPath():
-
-    # if not already, get admin privileges
-    Helpers.acquire_admin_privileges()
+# Note:
+# At first I thought I should update path each time, but now I've realized it makes way more sense to just rename the Godot exe to Godot.exe and make a text file to keep track of the version number.
+def fixGodotName():
 
     # go to c/users/ to inspect the folders there
     os.chdir("C:/Users/")
@@ -29,45 +18,31 @@ def updateGodotPath():
 
     # collect the files at the Godot_Mono folder
     godotfiles = os.listdir()
-    desiredfile = ""
 
-    # grab the exe desired (assumes the name is not altered so it will end in "_win64.exe")
+    versioninfo = ""
+
+    # rename exes, careful not to double rename
     for file_entry in godotfiles:
-        if file_entry.endswith("_win64.exe"):
-            desiredfile = file_entry
-            break
+        if file_entry == "Godot.exe" or file_entry == "Godot_console.exe"  or file_entry == "GodotVersion.txt"  or file_entry == "GodotSharp":
+            # don't rename when naming is already correct
+            continue
+        if (file_entry.endswith("_console.exe") and (not "Godot_console.exe" in file_entry)):
+            # rename the console, as it'll catch .exe too
+            os.rename(file_entry, "Godot_console.exe")
+        elif (file_entry.endswith(".exe") and (not "Godot.exe" in file_entry)):
+            # save full name of the exe, eg Godot_v4.2.1-stable_mono_win64
+            versioninfo = file_entry
+            os.rename(file_entry, "Godot.exe")
 
-    godotpath = r"" + os.getcwd() + "\\" + desiredfile
+    # if the rename wasn't a dupe, write out version info
+    if len(versioninfo) > 0:
+        with open("GodotVersion.txt", "w") as file:
+            file.write(versioninfo)
+            
+    godotpath = r"" + os.getcwd() + "\\" + "Godot.exe"
 
     print("Latest Godot path: " + godotpath)
-
-    os.environ["PATH"] += os.pathsep + godotpath
-    print("PATH has been updated!")
     input("Press enter to exit...")
 
-    
-
-    # os.environ["Godot"] = godotpath
-
-    # print(godotpath)
-    # print(os.pathsep)
-
-
-
 def runGodot():
-    os.system(os.environ["Godot"])
-
-# app_path = os.path.join(root_path, 'other', 'dir', 'to', 'app')
-# print(os.environ["PATH"])
-
-# updateGodotPath()
-    
-
-
-# if is_admin():
-#     print("The script is run with admin privileges.")
-# else:
-#     print("The script is not run with admin privileges.")
-print(Helpers.is_admin())
-Helpers.acquire_admin_privileges()
-print(Helpers.is_admin())
+    os.system(os.environ["GODOT"])

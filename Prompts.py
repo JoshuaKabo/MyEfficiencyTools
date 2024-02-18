@@ -1,4 +1,4 @@
-possibleActions = "etcpogu"
+possibleActions = "etcpogr"
 possibleYesNoSelection = "yn"
 dividerSize = 80
 
@@ -32,8 +32,8 @@ def promptActionList():
     print("g to open Godot")
     print("o to edit text palette paste dict")
     print("p to open text palette")
+    print("r to update Godot path")
     print("t to open notes")
-    print("u to update Godot path")
     printDiv('-')
     return input("Select an action: ")
 

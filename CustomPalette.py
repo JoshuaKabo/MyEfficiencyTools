@@ -16,10 +16,10 @@ def handleActionList():
         case 'p': # open textpalette
             os.chdir("C:\\MyStuff\\_TextPalette_")
             os.system("C:\\MyStuff\\_TextPalette_\\launch.bat")
+        case 'r': # rename Godot to just Godot.exe
+            GodotManager.fixGodotName()
         case 't': # open notes
             os.system("code-insiders C:\\Users\\joshk\\MyNotes")
-        case 'u': # update Godot path
-            GodotManager.updateGodotPath()
         case _: # default - close
             sys.exit()
     sys.exit()
