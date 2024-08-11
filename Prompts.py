@@ -32,7 +32,7 @@ def promptActionList():
     print("g to open Godot")
     print("o to edit text palette paste dict")
     print("p to open text palette")
-    print("r to update Godot path")
+    print("r to update Godot path - rename to Godot.exe for startup")
     print("t to open notes")
     printDiv('-')
     return input("Select an action: ")
