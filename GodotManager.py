@@ -2,7 +2,8 @@ import os
 
 # Note:
 # At first I thought I should update path each time, but now I've realized it makes way more sense to just rename the Godot exe to Godot.exe and make a text file to keep track of the version number.
-def fixGodotName():
+# cli_entry is a flag to indicate if this is being called directly from the command line or from internally. This dictates console output and exit behavior.
+def fixGodotName(cli_entry = False):
 
     # go to c/users/ to inspect the folders there
     os.chdir("C:/Users/")
@@ -41,8 +42,10 @@ def fixGodotName():
             
     godotpath = r"" + os.getcwd() + "\\" + "Godot.exe"
 
-    print("Latest Godot path: " + godotpath)
-    input("Press enter to exit...")
+    if cli_entry:
+        print("Latest Godot path: " + godotpath)
+        input("Press enter to exit...")
 
 def runGodot():
+    fixGodotName(cli_entry=False)
     os.system(os.environ["GODOT"])
