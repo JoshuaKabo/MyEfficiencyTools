@@ -17,7 +17,7 @@ def handleActionList():
             os.chdir("C:\\MyStuff\\_TextPalette_")
             os.system("C:\\MyStuff\\_TextPalette_\\launch.bat")
         case 'r': # rename Godot to just Godot.exe
-            GodotManager.fixGodotName()
+            GodotManager.fixGodotName(cli_entry=True)
         case 't': # open notes
             os.system("code-insiders C:\\Users\\joshk\\MyNotes")
         case _: # default - close
