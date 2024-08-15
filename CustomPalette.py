@@ -10,7 +10,7 @@ def handleActionList():
         case 'e': # edit this script
             os.system("code-insiders C:\\Users\\joshk\\dev\\Tools\\MyEfficiencyTools")
         case 'g': # open Godot
-            GodotManager.runGodot(cli_entry=True)
+            GodotManager.runGodot()
         case 'o': # edit the textpalette paste dict
             os.system("code-insiders C:\\MyStuff\\_TextPalette_\\paste_dict.txt")
         case 'p': # open textpalette
