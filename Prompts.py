@@ -25,6 +25,7 @@ def runPromptNoResponseLimit(PromptPrint, *promptArgs):
     response = response.lower()
     return response
 
+# selection of actions for the first page of custompalette
 def promptActionList():
     printDiv('-')
     print("c to exit")
@@ -48,6 +49,7 @@ def runYesNoPrompt(PromptPrint, *promptArgs):
     response = runPrompt(possibleYesNoSelection, PromptPrint, *promptArgs).lower()
     return response == 'y'
 
+# for use as an arg in specific prompt functions
 def promptGenericList(list):
     printDiv('*')
     for item in list:

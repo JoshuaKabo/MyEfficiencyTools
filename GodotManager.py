@@ -1,4 +1,8 @@
-import os
+import os, Prompts
+
+language_options = ["Mono", "GDScipt"]
+language_option_selections = ["m", "g"]
+
 
 # Note:
 # At first I thought I should update path each time, but now I've realized it makes way more sense to just rename the Godot exe to Godot.exe and make a text file to keep track of the version number.
@@ -47,5 +51,13 @@ def fixGodotName(cli_entry = False):
         input("Press enter to exit...")
 
 def runGodot():
+    lang_choice = Prompts.runPromptNoResponseLimit(promptGenericList(language_options)
+    match lang_choice:
+        case 'm':
+            os.environ["GODOT"] = "C:/Users/joshk/dev/Tools/Godot/Godot_Mono/Godot.exe"
+        case 'g':
+            os.environ["GODOT"] = "C:/Users/joshk/dev/Tools/Godot/Godot_GDScript/Godot.exe"
+        case _:
+            os.environ["GODOT"] = "C:/Users/joshk/dev/Tools/Godot/Godot_Mono/Godot.exe"
     fixGodotName(cli_entry=False)
     os.system(os.environ["GODOT"])
