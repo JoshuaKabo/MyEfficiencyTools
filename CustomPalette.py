@@ -20,6 +20,9 @@ def handleActionList():
             GodotManager.fixGodotName(cli_entry=True)
         case 't': # open notes
             os.system("code-insiders C:\\Users\\joshk\\MyNotes")
+        case 's': # open local only script
+            with open("LocalOnlyScriptPath.txt", "r") as file:
+                os.system("py " + file.readline())
         case _: # default - close
             sys.exit()
     sys.exit()
