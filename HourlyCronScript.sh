@@ -1,1 +1,1 @@
-cp /home/joshk/Documents/ObsidianVaults/Obsidian-Todo/.obsidian/community-plugins.json /home/joshk/Documents/ObsidianVaults/Obsidian-Todo/community-plugin-list.md
+cp /home/joshk/Documents/ObsidianVaults/Obsidian-Todo/.obsidian/community-plugins.json /home/joshk/Documents/ObsidianVaults/Obsidian-Todo/MetaFiles/community-plugin-list.md
